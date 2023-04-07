@@ -54,4 +54,34 @@ int main(int argc, char** argv) {
 
 ##### Output
 
+For two processes output should look like:
+
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output1.jpg)
+
+#### Code Example: Using Rank to Distribute Task
+
+This code demonstrates how to use rank with conditionals to make different processes do different tasks.
+
+##### In Python
+
+```
+from mpi4py import MPI
+
+comm = MPI.COMM_WORLD  # accessing the communicator object
+rank = comm.rank  # getting the rank of the current process
+
+if(rank == 0):
+    print("Doing the task of process 0.")
+elif(rank == 1):
+    print("Doing the task of process 1.")
+elif(rank == 2):
+    print("Doing the task of process 2.")
+else:
+    print("Doing the leftover task.")
+```
+
+##### In C
+
+##### Output
+
+This output indicates that process 0 completed its task first and printed its message, followed by process 3 and process 1. Finally, the last process (rank 2) printed its message indicating that it was left over. The order of the output may vary between runs due to the random scheduling of the processes by the MPI implementation.
