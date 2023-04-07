@@ -53,3 +53,5 @@ int main(int argc, char** argv) {
 ```
 
 ##### Output
+
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output1.jpg)
