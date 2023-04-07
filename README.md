@@ -3,7 +3,13 @@
 ## Table of Contents
 
 1. [Overview](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Overview.md)
-2. [Sending and Receiving Messages](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Messages.md)
+2. [Communicator] (https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Communicator.md)
+3. Point to Point Communication
+   - [Sending and Receiving Messages](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Messages.md)
+   - [Blocking and Non-blocking]()
+4. Collectives
+   - [Broadcast and Reduce]()
+   - [Gather and Scatter]()
 
 ## Installation for Python
 
