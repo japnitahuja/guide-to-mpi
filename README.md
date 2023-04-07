@@ -15,6 +15,7 @@ pip install mpi4py
 ```
 
 Download MSMPI from https://www.microsoft.com/en-us/download/details.aspx?id=100593
+
 Add to Environment variables
 
 ## Installation for C
