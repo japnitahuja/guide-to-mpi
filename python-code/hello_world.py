@@ -1,5 +1,7 @@
 from mpi4py import MPI
 
 comm = MPI.COMM_WORLD
+rank = comm.rank
+size = comm.size
 
-print('Hi, my rank is:', comm.rank)
+print('Hello from process', rank, ' of ', size)
