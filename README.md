@@ -36,4 +36,5 @@ To compile a MPI program written in C run the command:
 ```$ mpicc openmpi_first.c -o first_mpi```
 ## Run MPI Program
 After compiling a file you need to run it to see the output. Compiling a program means the program is converted into machine language. To see the output you have to run the following command:
+
 ``` mpiexec -n 4 ./first_mpi```
