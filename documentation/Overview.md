@@ -25,9 +25,9 @@ The communicator object contains the `Rank` and `Size` among other information. 
 ```
 from mpi4py import MPI
 
-comm = MPI.COMM_WORLD #access the world communicator object
-rank = comm.rank #get the rank of the process
-size = comm.size #get the size
+comm = MPI.COMM_WORLD # Access the world communicator object
+rank = comm.rank # Get the rank of the current process
+size = comm.size # Get the total number of processes
 
 print('Hello from process', rank, ' of ', size)
 ```
