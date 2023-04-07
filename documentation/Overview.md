@@ -85,3 +85,5 @@ else:
 ##### Output
 
 This output indicates that process 0 completed its task first and printed its message, followed by process 3 and process 1. Finally, the last process (rank 2) printed its message indicating that it was left over. The order of the output may vary between runs due to the random scheduling of the processes by the MPI implementation.
+
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output2.jpg)
