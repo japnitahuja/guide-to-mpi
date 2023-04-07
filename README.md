@@ -1,4 +1,4 @@
-# guide-to-mpi
+# Guide to MPI in Python and C
 
 ## Installation
 
@@ -15,7 +15,12 @@ Add to Environment variables
 
 ## Running Program
 
+```
 mpiexec -n numprocs python -m mpi4py pyfile
+```
 
 Example:
+
+```
 mpiexec -n 2 python -m mpi4py hello_world.py
+```
