@@ -22,6 +22,8 @@ elif(rank == 1):
     print("On process", rank, "we received", data)
 ```
 
+##### In C
+
 ##### Output
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output3.jpg)
