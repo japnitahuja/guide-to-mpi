@@ -10,6 +10,7 @@
 4. Collectives
    - [Broadcast and Reduce]()
    - [Gather and Scatter]()
+   - [Scatter and Reduce]()
 
 ## Installation for Python
 
