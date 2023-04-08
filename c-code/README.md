@@ -33,6 +33,7 @@ When this program is run on 2 processes using an MPI launcher like mpirun or mpi
 To compile the code
 
 ```mpicc messages.c -o messages```
+
 To run the code
 
 ```mpirun -n 2 ./messages```
