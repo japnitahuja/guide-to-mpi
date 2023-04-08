@@ -48,6 +48,8 @@ Note that this code assumes that the number of processes is 4, and that ARRAY_SI
 To compile the code
 
  ```mpicc scatter_gather.c -o scatter_gather```
+ 
 To run the code
+
 ``` mpirun -n 4 ./scatter_gather```
  
