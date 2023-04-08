@@ -37,3 +37,17 @@ To compile the code
 To run the code
 
 ```mpirun -n 2 ./messages```
+## scatter_gather.c
+In this example code, process 0 creates an array of integers to be scattered, and then uses MPI_Scatter to distribute the array across all processes. Each process receives a portion of the array, stored in a local receive buffer.
+
+Each process then prints its local portion of the array to the console, so you can see how the array has been distributed.
+
+Finally, MPI_Gather is used to collect the local arrays from all processes onto process 0. Process 0 receives each portion of the array and stores it in the original send buffer, which is then printed to the console so you can see the final result.
+
+Note that this code assumes that the number of processes is 4, and that ARRAY_SIZE is evenly divisible by the number of processes. You can modify the code to handle different array sizes and numbers of processes as needed.
+To compile the code
+
+ ```mpicc scatter_gather.c -o scatter_gather```
+To run the code
+``` mpirun -n 4 ./scatter_gather```
+ 
