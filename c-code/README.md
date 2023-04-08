@@ -53,3 +53,14 @@ To run the code
 
 ``` mpirun -n 4 ./scatter_gather```
  
+ ## Broadcast.c
+ In this code, the root process (rank 0) broadcasts an integer value to all other processes using the MPI_Bcast() function. All other processes receive the broadcasted value using the same function.
+ 
+ To compile the code
+
+ ``` mpicc broadcast.c -o broadcast```
+ 
+To run the code
+
+``` mpirun -n 4 ./broadcast ```
+ 
