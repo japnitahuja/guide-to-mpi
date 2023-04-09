@@ -63,4 +63,25 @@ To run the code
 To run the code
 
 ``` mpirun -n 4 ./broadcast ```
+ ## Broadcast_reduce.c
  
+ In this code, the root process broadcasts an integer value to all other processes using the MPI_Bcast() function. Then, all processes perform a reduction operation on their local data using the MPI_Reduce() function, which sums up all the values from different processes and stores the result in the root process.
+
+ 
+To run this code, you can compile it with an MPI compiler (e.g. mpicc) and then run it using an MPI runtime environment (e.g. mpirun). 
+
+To compile the code:
+
+``` mpicc broadcast_reduce.c -o broadcast_reduce```
+
+To run the code with 4 processes:
+
+```mpirun -n 4 ./broadcast_reduce```
+
+This will run the code with 4 processes, where the root process broadcasts the value 0 to all other processes. Then, all processes perform a reduction operation on their local data and send the result to the root process. Finally, the root process prints out the sum of all data received from different processes.
+
+
+
+
+
+
