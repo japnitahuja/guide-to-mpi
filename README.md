@@ -11,6 +11,7 @@
    - [Broadcast and Reduce]()
    - [Gather and Scatter]()
    - [Scatter and Reduce]()
+5. Hybrid Systems
 
 ## Installation for Python
 
