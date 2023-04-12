@@ -10,6 +10,16 @@ In a shared memory system, each processor is connected to a shared memory which 
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/sharedvsdistributed.png)
 
+#### Pros
+- Portability: Can run on both shared and distributed memory systems unlike other parallel programming frameworks like OpenMP, OpenCL or pthreads
+- Scalability: As the scale of the problem increases, distributed memory systems are preferred over shared memory systems. Increasing processors in distributed systems may be more viable.
+- Flexibility: MPI provides high level of control over the communication and synchronization of processes.
+
+#### Cons
+- Overheads: Performance is limited by communication speeds between the nodes.
+- Complexity: Can be harder to debug as distribution of data and messages needs to be explicitly programmed.
+
+
 ### How does MPI work?
 
 MPI launches a user specified number of processes at the start of the program. Usually, this is the number of cores in a system. The processes have their own memory and do not share it with other processes. Each process has a unique `Rank` associated with it. This value is used to differentiate between the processes in the code. We will see an example of this in the next section.
