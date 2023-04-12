@@ -14,7 +14,7 @@ Here, we consider parallel programming models using a pure shared or distributed
 ### POSIX THREAD:
 The Pthreads, or Portable Operating System Interface
 (POSIX) Threads, is a set of C programming language types
-and procedure calls [7], [22], [23]. Pthreads is implemented
+and procedure calls. Pthreads is implemented
 as a header (pthread.h) and a library for creating and
 manipulating each thread. The Pthreads library provides
 functions for creating and destroying threads and for
