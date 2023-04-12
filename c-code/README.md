@@ -5,7 +5,7 @@ After initializing the MPI environment using MPI_Init(), the program gets the ra
 
 Finally, the program finalizes the MPI environment using MPI_Finalize() and returns 0.
 
-When this program is run on multiple processes using an MPI launcher like mpirun or mpiexec, each process will print its own message to the console. The order in which the messages are printed is not guaranteed, as the processes can execute in any order.
+When this program is run on multiple processes using an MPI launcher called mpirun , each process will print its own message to the console. The order in which the messages are printed is not guaranteed, as the processes can execute in any order.
 
 ## Global_sum.c
 
@@ -29,7 +29,7 @@ If the rank of the process is 1, it receives the value of the shared variable fr
 
 Finally, the program finalizes the MPI environment using MPI_Finalize and returns 0.
 
-When this program is run on 2 processes using an MPI launcher like mpirun or mpiexec, it will send the value of the shared variable from process 0 to process 1, and print messages indicating that the value has been sent and received. The order in which the messages are printed may differ depending on how the processes execute.
+When this program is run on 2 processes using an MPI launcher called mpirun, it will send the value of the shared variable from process 0 to process 1, and print messages indicating that the value has been sent and received. The order in which the messages are printed may differ depending on how the processes execute.
 To compile the code
 
 ```mpicc messages.c -o messages```
