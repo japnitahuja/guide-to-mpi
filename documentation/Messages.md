@@ -1,10 +1,31 @@
 ## Sending and Receiving Messages
 
-Processes communicate with each other by sending and receiving messages.
+Processes communicate with each other by sending and receiving messages. This is also known as point to point communication as one node explicity communicates with another node. The following steps are undertaken to send and receive messages:
+
+1. Process 1 gets the data ready for the message
+2. Process 1 sends a message to another process (destination) using the Send function
+3. Process 2 decides that it wants to receive a message from process one (source)
+4. Process 2 receives the message by calling the Recv function
+
+Thus the sent message is only received if it is indicated by the destination process.
+
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/messages.jpg)
 
 #### Code Example: Sending and Receiving Data
 
 ##### In Python
+
+###### Comm.Send(obj, dest=0, tag=0)
+- Comm: Communicator
+- obj: Data we wish to send
+- dest (int): Destination Process Rank
+- tag (int): Message tag
+
+###### Comm.Recv(obj, source=0, tag=0)
+- Comm: Communicator
+- obj: Data we wish to receive
+- source (int): Source Process Rank
+- tag (int): Message tag
 
 ```
 from mpi4py import MPI
@@ -23,6 +44,23 @@ elif(rank == 1):
 ```
 
 ##### In C
+
+###### MPI_Send(void* data,int count,MPI_Datatype datatype,int destination,int tag,MPI_Comm communicator)
+- data: Data to be sent
+- count: Number of data items
+- datatype: Datatype of data
+- destination: Destination Process Rank
+- tag: Message tag
+- communicator: Communicator object
+
+###### MPI_Recv(void* data,int count,MPI_Datatype datatype,int source,int tag,MPI_Comm communicator,MPI_Status* status)
+- data: Data to be received
+- count: Number of data items
+- datatype: Datatype of data
+- source: Source Process Rank
+- obj: Data we wish to receive
+- tag: Message tag
+- status: information about the message received
 
 ```
 #include <mpi.h>
@@ -57,3 +95,9 @@ int main(int argc, char **argv)
 ##### Output
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output3.jpg)
+
+### References
+
+Spagnuolo, C. (2020). Coding games and programming challenges to code better. CodinGame. Retrieved April 12, 2023, from https://www.codingame.com/playgrounds/47058/have-fun-with-mpi-in-c/lets-start-to-have-fun-with-mpi
+
+Watson, G. (2017). Introduction. Python MPI: Introduction. Retrieved April 12, 2023, from https://nyu-cds.github.io/python-mpi/01-introduction/ 
