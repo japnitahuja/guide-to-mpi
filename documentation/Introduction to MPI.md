@@ -11,7 +11,7 @@ OpenCL's application is not particularly extended in the field of hybrid program
 ## Pure Parallel Programming model
 Here, we consider parallel programming models using a pure shared or distributed memory approach.
 
-# POSIX THREAD:
+### POSIX THREAD:
 The Pthreads, or Portable Operating System Interface
 (POSIX) Threads, is a set of C programming language types
 and procedure calls [7], [22], [23]. Pthreads is implemented
@@ -22,12 +22,12 @@ coordinating thread activities via constructs designed to
 ensure exclusive access to selected memory locations (locks
 and condition variables).
 
-# Shared Memory OpenMP:
+### Shared Memory OpenMP:
 penMP [25] is a shared memory application programming interface (API) whose aim is to ease shared memory
 parallel programming. The OpenMP multithreading interface  is specifically designed to support High Performance Computing community. It
 is also portable across shared memory architectures.
 
-# Message Passing
+### Message Passing
 A parallel programming approach called message passing uses message exchange to facilitate communication between processes. But over time, a standard for this approach has emerged and taken hold: the Message Passing Interface (MPI). A specification for message-passing operations is called MPI. MPI is not a language; it is a library. It details the names, calling patterns, and outcomes of the subroutines or functions that Fortran, C, or C++ programmes should call. The programmes can therefore be created using standard compilers, but they also need to be linked with the MPI library.
 The message-passing model is addressed by MPI. The simultaneous processes in this approach each have their own memory address space. When a portion of one process's address space is copied into the address space of another process, communication takes place.
 Only when the first process executes a send operation and the second process executes a receive operation does this cooperative operation take place. Similar to Pthreads, workload partitioning and task mapping in MPI must be done by the programmer. The tasks that are to be computed by each process must be managed by programmers. Point-to-point, collective, one-sided, and parallel I/O operations are all part of MPI's communication paradigms.
