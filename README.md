@@ -8,7 +8,7 @@ This guide is designed to provide you with a comprehensive understanding of the 
 2. [Communicator](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Communicator.md)
 3. Point to Point Communication
    - [Sending and Receiving Messages](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Messages.md)
-   - [Blocking and Non-blocking]()
+   - [Blocking and Non-blocking](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/BlockingandNonblocking.md)
 4. Collectives
    - [Broadcast and Reduce]()
    - [Gather and Scatter]()
