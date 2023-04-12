@@ -23,7 +23,7 @@ ensure exclusive access to selected memory locations (locks
 and condition variables).
 
 ### Shared Memory OpenMP:
-penMP [25] is a shared memory application programming interface (API) whose aim is to ease shared memory
+OpenMP is a shared memory application programming interface (API) whose aim is to ease shared memory
 parallel programming. The OpenMP multithreading interface  is specifically designed to support High Performance Computing community. It
 is also portable across shared memory architectures.
 
