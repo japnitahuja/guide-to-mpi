@@ -37,3 +37,51 @@ To compile the code
 To run the code
 
 ```mpirun -n 2 ./messages```
+## scatter_gather.c
+In this example code, process 0 creates an array of integers to be scattered, and then uses MPI_Scatter to distribute the array across all processes. Each process receives a portion of the array, stored in a local receive buffer.
+
+Each process then prints its local portion of the array to the console, so you can see how the array has been distributed.
+
+Finally, MPI_Gather is used to collect the local arrays from all processes onto process 0. Process 0 receives each portion of the array and stores it in the original send buffer, which is then printed to the console so you can see the final result.
+
+Note that this code assumes that the number of processes is 4, and that ARRAY_SIZE is evenly divisible by the number of processes. You can modify the code to handle different array sizes and numbers of processes as needed.
+To compile the code
+
+ ```mpicc scatter_gather.c -o scatter_gather```
+ 
+To run the code
+
+``` mpirun -n 4 ./scatter_gather```
+ 
+ ## Broadcast.c
+ In this code, the root process (rank 0) broadcasts an integer value to all other processes using the MPI_Bcast() function. All other processes receive the broadcasted value using the same function.
+ 
+ To compile the code
+
+ ``` mpicc broadcast.c -o broadcast```
+ 
+To run the code
+
+``` mpirun -n 4 ./broadcast ```
+ ## Broadcast_reduce.c
+ 
+ In this code, the root process broadcasts an integer value to all other processes using the MPI_Bcast() function. Then, all processes perform a reduction operation on their local data using the MPI_Reduce() function, which sums up all the values from different processes and stores the result in the root process.
+
+ 
+To run this code, you can compile it with an MPI compiler (e.g. mpicc) and then run it using an MPI runtime environment (e.g. mpirun). 
+
+To compile the code:
+
+``` mpicc broadcast_reduce.c -o broadcast_reduce```
+
+To run the code with 4 processes:
+
+```mpirun -n 4 ./broadcast_reduce```
+
+This will run the code with 4 processes, where the root process broadcasts the value 0 to all other processes. Then, all processes perform a reduction operation on their local data and send the result to the root process. Finally, the root process prints out the sum of all data received from different processes.
+
+
+
+
+
+

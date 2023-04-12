@@ -1,5 +1,7 @@
 # Guide to MPI in Python and C
 
+This guide is designed to provide you with a comprehensive understanding of the Message Passing Interface (MPI) and how to use it in your parallel programming projects. MPI is a widely used parallel programming framework that allows multiple processors to communicate and coordinate with each other. It is commonly used in scientific computing, numerical simulations, and other high-performance computing applications. We will be covering both mpi4py for Python and OpenMPI for C.
+
 ## Table of Contents
 
 1. [Overview](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Overview.md)
@@ -11,6 +13,7 @@
    - [Broadcast and Reduce]()
    - [Gather and Scatter]()
    - [Scatter and Reduce]()
+5. Hybrid Systems
 
 ## Installation for Python
 
@@ -22,23 +25,19 @@ On each computer node run:
 pip install mpi4py
 ```
 
-Download MSMPI from https://www.microsoft.com/en-us/download/details.aspx?id=100593
+To run MPI programs on your system you also need to download MSMPI from https://www.microsoft.com/en-us/download/details.aspx?id=100593
 
-Add to Environment variables
+Do not forget to add MSMPI to Environment variables once it's installed.
 
 ## Installation for C
 
 ### Windows Subsystem/Linux
 
-To start MPI Programming you need to install MPI resources on your system. Those resources will run all MPI functions. So, if you miss this step you will not able to compile or run a single program. This is the main step of MPI programming. Run the below command to install MPI on your system.
+To start MPI Programming you need to install MPI resources. Run the command below to install MPI on your system.
 
 ```
 sudo apt install openmpi-bin libopenmpi-dev
 ```
-
-This step may ask upto 5 minutes to complete and requires almost 100 MB space on your disk. Press ‘Y’ as response.
-
-After this step you can run a C program file.
 
 ## Usage in Python
 
@@ -65,6 +64,8 @@ After compiling a file you need to run it to see the output. Compiling a program
 ```
 mpiexec -n numprocesses ./file_name
 ```
+
+In some programs you might have to use mpirun instead of mpiexec.
 
 Example:
 
