@@ -1,6 +1,4 @@
-## Broadcast and Reduce
-
-### Broadcast
+## Broadcast
 
 In this one process sends out data to all other processes.
 
