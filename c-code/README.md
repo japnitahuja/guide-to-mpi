@@ -90,7 +90,8 @@ After sending or receiving the message, each process performs some other computa
 
 The code demonstrates how non-blocking communication can be used to overlap computation and communication to improve program performance.
 
+## Deadlock.c
 
-
-
+This C code creates two processes, where process 1 generates a random number and sends it to process 0. Process 0 receives the number and prints it. The MPI_Send and MPI_Recv functions are used for point-to-point communication, where MPI_Send sends data from the sending process to the receiving process, and MPI_Recv receives data from the sending process.
+As I commented out the MPI_Send call, rank 1 will generate a random number and print it, but it does not send it to rank 0. Rank 0 will then wait indefinitely for a message from rank 1 that will never arrive.
 

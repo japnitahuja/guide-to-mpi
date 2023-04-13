@@ -4,7 +4,7 @@
 
 A deadlock may occur when a program is indefinately waiting for a message that was never sent. 
 
-[!alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/deadlock.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/deadlock.jpg)
 
 #### In python
 
@@ -31,7 +31,7 @@ if rank == 0:
 
 #### Output
 
-[!alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output4.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output4.jpg)
 
 This is because Recv and Send are blocking calls. The program will not move ahead till it has received the message. A simple fix to this would be to use non-blocking calls like Irecv and Isend. 
 
@@ -58,7 +58,7 @@ if rank == 0:
 
 #### Output
 
-[!alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output5.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output5.jpg)
 
 
 
