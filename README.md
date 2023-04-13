@@ -6,13 +6,13 @@ This guide is designed to provide you with a comprehensive understanding of the 
 
 1. [Overview](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Overview.md)
 2. [Communicator](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Communicator.md)
-3. Point to Point Communication
+3. Point to Point Communication: One to One Communication
    - [Sending and Receiving Messages](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Messages.md)
    - [Blocking and Non-blocking](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/BlockingandNonblocking.md)
-4. Collectives
-   - [Broadcast and Reduce]()
-   - [Gather and Scatter]()
-   - [Scatter and Reduce]()
+4. Collectives: One to Many or Many to Many Communication
+   - [Broadcast and Reduce](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/BroadcastandReduce.md)
+   - [Gather and Scatter](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/BroadcastandReduce.md)
+   - [Scatter and Reduce](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/BroadcastandReduce.md)
 5. Hybrid Systems
 
 ## Installation for Python
