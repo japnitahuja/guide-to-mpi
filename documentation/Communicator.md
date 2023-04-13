@@ -44,6 +44,10 @@ For two processes output should look like:
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output1.jpg)
 
+[Next Section](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Messages.md)
+
 ### References
 
 Dalcin, L. (2023). MPI for python. MPI for Python - MPI for Python 3.1.4 documentation. Retrieved April 13, 2023, from https://mpi4py.readthedocs.io/ 
+
+Spagnuolo, C. (2020). Coding games and programming challenges to code better. CodinGame. Retrieved April 12, 2023, from https://www.codingame.com/playgrounds/47058/have-fun-with-mpi-in-c/lets-start-to-have-fun-with-mpi 
