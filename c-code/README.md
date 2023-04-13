@@ -93,3 +93,7 @@ The code demonstrates how non-blocking communication can be used to overlap comp
 ## Deadlock.c
 
 This program receives a floating-point number from another process using the MPI_Recv function. Process 0 waits to receive the number from process 1, and process 1 waits to receive the number from process 0. Once the number is received, the process prints a message to the console indicating the rank and the received number. As both of them are waiting the program never ends. This situation is called deadlock.
+
+## Deadlock_fix.c
+
+This code uses MPI_Irecv to perform non-blocking receive operation to receive data from the other process. The MPI_Wait function is used to wait until the data has been received. When MPI_Irecv is called, the receiving process immediately starts to receive data from the sending process, but the program execution does not block until the data is received. Instead, it continues with the rest of the code, and waits for the data to arrive later using the MPI_Wait function.
