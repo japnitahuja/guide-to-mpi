@@ -9,7 +9,7 @@ Processes communicate with each other by sending and receiving messages. This is
 
 Thus the sent message is only received if it is indicated by the destination process.
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/messages.png)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/messagescropped.png)
 
 #### Code Example: Sending and Receiving Data
 
