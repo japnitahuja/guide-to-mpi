@@ -26,6 +26,36 @@ if rank == 1:
 
 ##### In C
 
+```#include <mpi.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv) {
+    MPI_Init(&argc, &argv);
+
+    int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    double randNum;
+
+    if (rank == 1) {
+        srand(time(NULL));
+        randNum = (double)rand() / (double)RAND_MAX;
+        printf("Process %d drew the number %f\n", rank, randNum);
+       // MPI_Send(&randNum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+    }
+
+    if (rank == 0) {
+        printf("Process %d before receiving has the number %f\n", rank, randNum);
+        MPI_Recv(&randNum, 1, MPI_DOUBLE, 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        printf("Process %d received the number %f\n", rank, randNum);
+    }
+
+    MPI_Finalize();
+    return 0;
+}
+```
 ##### Output
 
 This code will not produce any output and keep waiting. This is because Recv and Send are blocking calls. The program will not move ahead till it has received the message. A simple fix to this would be to use non-blocking calls like Irecv and Isend. 
@@ -53,6 +83,40 @@ if rank == 1:
 ```
 ##### In C
 
+```
+#include <mpi.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv) {
+    int rank, size;
+    MPI_Init(NULL, NULL);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    double randNum = 0.0;
+
+    if (rank == 1) {
+        srand(time(NULL));
+        randNum = (double) rand() / (double) RAND_MAX;
+        printf("Process %d drew the number %f\n", rank, randNum);
+        // MPI_Send(&randNum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+    }
+
+    if (rank == 0) {
+        printf("Process %d before receiving has the number %f\n", rank, randNum);
+        MPI_Request request;
+        MPI_Irecv(&randNum, 1, MPI_DOUBLE, 1, 0, MPI_COMM_WORLD, &request);
+        MPI_Status status;
+        MPI_Wait(&request, &status);
+        printf("Process %d received the number %f\n", rank, randNum);
+    }
+
+    MPI_Finalize();
+    return 0;
+}
+```
 ##### Output
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output4.jpg)
@@ -102,6 +166,40 @@ if rank == 1:
 ````
 
 ##### In C
+
+```#include <mpi.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv) {
+    int rank, size;
+    MPI_Init(NULL, NULL);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    double randNum = 0.0;
+
+    if (rank == 1) {
+        srand(time(NULL));
+        randNum = (double) rand() / (double) RAND_MAX;
+        printf("Process %d drew the number %f\n", rank, randNum);
+        // MPI_Send(&randNum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+    }
+
+    if (rank == 0) {
+        printf("Process %d before receiving has the number %f\n", rank, randNum);
+        MPI_Request request;
+        MPI_Irecv(&randNum, 1, MPI_DOUBLE, 1, 0, MPI_COMM_WORLD, &request);
+        MPI_Status status;
+        MPI_Wait(&request, &status);
+        printf("Process %d received the number %f\n", rank, randNum);
+    }
+
+    MPI_Finalize();
+    return 0;
+}
+```
 
 ##### Output
 
