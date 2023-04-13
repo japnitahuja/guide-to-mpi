@@ -62,7 +62,9 @@ if rank == 1:
 The `Irecv` and `Isend` methods are non-blocking call i.e. they return a `Request` which can then be either tested, waited on or cancelled.
 
 `Request.Wait()`: blocks the calling process 
+
 `Request.Test()`: return true if completed
+
 `Request.Cancel()`: cancels communication
 
 #### Code example: Overlapping Communication and Computation
@@ -102,6 +104,8 @@ if rank == 1:
 ##### In C
 
 ##### Output
+
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output5.jpg)
 
 
 
