@@ -4,7 +4,7 @@
 
 In a reduction function, all inputs are combined or reduced to give a singular output. It differs from gather since it reduces it to one value through some aggregation function.
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/reduce.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/8.png)
 
 #### Code Example: Global Sum
 
@@ -214,7 +214,7 @@ int main(int argc, char** argv) {
 
 `Scatter` is an operation in which an array is divided into smaller chunks and each process receives a portion of the array. `Reduce` is an operation that combines the values on each process into a single value. 
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/scatterreduce.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/9.png)
 
 [Next Section]()
 
