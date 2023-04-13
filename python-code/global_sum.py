@@ -1,15 +1,15 @@
 from mpi4py import MPI
 import numpy as np
 
-n = 10
-
 comm = MPI.COMM_WORLD
 rank = comm.rank
 size = comm.size
+n = 2 * size
 
 if rank == 0:
     data = np.arange(1, n+1)
     chunks = [[] for i in range(size)]
+    # data needs to be divided in chunks manually for scatter
     for i in range(size):
         for j in range(n//size):
             chunks[i].append(data[i*(n//size)+j])
