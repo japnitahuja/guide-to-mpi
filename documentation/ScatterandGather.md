@@ -86,6 +86,12 @@ if rank == 0:
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output8.jpg)
 
+### Scatter and Gather
+
+`Scatter` allows the root process to distribute the data among all the processes in the communicator. The data is divided into equal-sized chunks and each process receives one of these chunks. `Gather` is the reverse operation of scatter. It allows all processes to send their local data to the root process, which collects all the data and stores it in a single array.
+
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/scatterandgather.jpg)
+
 
 [Next Section]()
 
