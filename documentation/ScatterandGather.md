@@ -155,7 +155,7 @@ if rank == 0:
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/scatterandgather.jpg)
 
 
-[Next Section]()
+[Next Section](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/ScatterandReduce.md)
 
 ### References
 
