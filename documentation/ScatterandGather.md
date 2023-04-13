@@ -36,7 +36,7 @@ print("Process", rank, "has received ", data)
 
 ##### Output
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output7.png)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output7.jpg)
 
 ### Gather
 
@@ -84,7 +84,7 @@ if rank == 0:
 
 ##### Output
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output8.png)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output8.jpg)
 
 
 [Next Section]()
