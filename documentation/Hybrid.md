@@ -29,5 +29,7 @@ The model of OpenCL is slightly different. The device consists of work groups wh
  ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/opencl.png)
  
 The hybrid model is a very GPU focussed approach. One MPI process maps to one GPU. This model is only effective if firstly the work at hand has two levels of parallelism, at the GPU and MPI level. And secondly, there is intensive computation required for which GPUs are required.
- 
- 
+
+### References
+
+Diaz, J., Munoz-Caro, C., & Nino, A. (2012). A survey of parallel programming models and tools in the multi and many-core era. IEEE Transactions on parallel and distributed systems, 23(8), 1369-1386
