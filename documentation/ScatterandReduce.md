@@ -115,6 +115,12 @@ if rank == 0:
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output10.jpg)
 
+### Scatter and Reduce
+
+`Scatter` is an operation in which an array is divided into smaller chunks and each process receives a portion of the array. `Reduce` is an operation that combines the values on each process into a single value. 
+
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/scatterreduce.jpg)
+
 [Next Section]()
 
 ### References
