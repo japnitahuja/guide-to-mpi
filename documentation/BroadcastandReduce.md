@@ -1,30 +1,48 @@
-## Overview
+## Broadcast and Reduce
 
-### What is MPI?
+### Broadcast
 
-MPI or message passing interface is the agreed upon standard to support parallel programming in distributed system. Processes communicate via messages which can refer to raw data, signals or acknowledgements. MPI is not a new language or a library, it is a specification of how the communication should occur. OpenMPI and mpi4py are libraries built according to the MPI standard.
+In this one process sends out data to all other processes.
 
-### Why MPI?
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/broadcast.jpg)
 
-In a shared memory system, each processor is connected to a shared memory which can be used for communication. However, for distributed computing where each processor has its own memory making messages the only natural way to communicate.
+Both the sender process and receiver processes call the function `Comm.Bcast`. Sender sends and receives the data whereas the receiver processes just receive.
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/sharedvsdistributed.png)
+#### Code Example: Broadcasting
 
-#### Pros
-- Portability: Can run on both shared and distributed memory systems unlike other parallel programming frameworks like OpenMP, OpenCL or pthreads
-- Scalability: As the scale of the problem increases, distributed memory systems are preferred over shared memory systems. Increasing processors in distributed systems may be more viable.
-- Flexibility: MPI provides high level of control over the communication and synchronization of processes.
+##### In Python
 
-#### Cons
-- Overheads: Performance is limited by communication speeds between the nodes.
-- Complexity: Can be harder to debug as distribution of data and messages needs to be explicitly programmed.
+###### Comm.Bcast(obj, root=0)
+- Comm: Communicator
+- obj: Data we wish to send/receive
+- root (int): Sender Process Rank
+
+```
+from mpi4py import MPI
+
+comm = MPI.COMM_WORLD
+rank = comm.rank
+
+if (rank == 0):
+    data = 1000
+else:
+    data = None
+
+# all processes will get the variable data from process 0
+data = comm.bcast(data, root=0)
+
+print("Process", rank, "has data", data)
+
+```
+
+##### In C
+
+##### Output
+
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output6.jpg)
 
 
-### How does MPI work?
-
-MPI launches a user specified number of processes at the start of the program. Usually, this is the number of cores in a system. The processes have their own memory and do not share it with other processes. Each process has a unique `Rank` associated with it. This value is used to differentiate between the processes in the code. We will see an example of this in the next section.
-
-[Next Section](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Communicator.md)
+[Next Section]()
 
 ### References
 
