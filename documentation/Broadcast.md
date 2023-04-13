@@ -2,7 +2,7 @@
 
 In this one process sends out data to all other processes.
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/broadcast.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/5.png)
 
 Both the sender process and receiver processes call the function `Comm.Bcast`. Sender sends and receives the data whereas the receiver processes just receive.
 
