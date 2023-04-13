@@ -13,7 +13,7 @@ This guide is designed to provide you with a comprehensive understanding of the 
    - [Broadcast](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Broadcast.md)
    - [Scatter and Gather](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/ScatterandGather.md)
    - [Scatter and Reduce](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/ScatterandReduce.md)
-5. Hybrid Systems
+5. [Hybrid Systems](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Hybrid.md)
 
 ## Installation for Python
 
