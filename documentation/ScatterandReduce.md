@@ -216,7 +216,7 @@ int main(int argc, char** argv) {
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/9.png)
 
-[Next Section]()
+[Next Section](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Hybrid.md)
 
 ### References
 
