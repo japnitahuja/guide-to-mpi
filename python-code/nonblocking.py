@@ -1,6 +1,5 @@
 from mpi4py import MPI
 import numpy
-import time
 
 comm = MPI.COMM_WORLD
 rank = comm.rank
@@ -13,8 +12,8 @@ if rank == 0:
     req = comm.Isend(randNum, dest=1)
     print("Rank {} sent data: {}".format(rank, randNum))
 elif rank == 1:
-    req = comm.Irecv(randNum,source=0)
-    
+    req = comm.Irecv(randNum, source=0)
+
 # do some other computation while waiting for communication to complete
 print("Rank {} is doing some other computation...".format(rank))
 result = 0
