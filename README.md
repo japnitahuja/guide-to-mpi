@@ -10,7 +10,7 @@ This guide is designed to provide you with a comprehensive understanding of the 
    - [Sending and Receiving Messages](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Messages.md)
    - [Blocking and Non-blocking](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/BlockingandNonblocking.md)
 4. Collectives: One to Many or Many to Many Communication
-   - [Broadcast and Reduce](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Broadcast.md)
+   - [Broadcast](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/Broadcast.md)
    - [Gather and Scatter](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/ScatterandGather.md)
    - [Scatter and Reduce](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/ScatterandReduce.md)
 5. Hybrid Systems
