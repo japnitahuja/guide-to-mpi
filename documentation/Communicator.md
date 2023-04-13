@@ -43,3 +43,7 @@ int main(int argc, char** argv) {
 For two processes output should look like:
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output1.jpg)
+
+### References
+
+Dalcin, L. (2023). MPI for python. MPI for Python - MPI for Python 3.1.4 documentation. Retrieved April 13, 2023, from https://mpi4py.readthedocs.io/ 
