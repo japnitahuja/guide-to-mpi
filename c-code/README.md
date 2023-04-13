@@ -80,6 +80,15 @@ To run the code with 4 processes:
 
 This will run the code with 4 processes, where the root process broadcasts the value 0 to all other processes. Then, all processes perform a reduction operation on their local data and send the result to the root process. Finally, the root process prints out the sum of all data received from different processes.
 
+## nonblocking.c
+
+It creates a group of MPI processes, and each process is assigned a rank within the group.
+
+If the process rank is 0, it generates a random number and sends it to process 1 using non-blocking communication. If the process rank is 1, it receives the message sent by process 0 using non-blocking communication.
+
+After sending or receiving the message, each process performs some other computations while waiting for the communication to complete. Once the communication is completed, process 1 prints the received message.
+
+The code demonstrates how non-blocking communication can be used to overlap computation and communication to improve program performance.
 
 
 
