@@ -96,6 +96,8 @@ int main(int argc, char **argv)
 
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output3.jpg)
 
+[Next Section](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/BlockingandNonblocking.md)
+
 ### References
 
 Spagnuolo, C. (2020). Coding games and programming challenges to code better. CodinGame. Retrieved April 12, 2023, from https://www.codingame.com/playgrounds/47058/have-fun-with-mpi-in-c/lets-start-to-have-fun-with-mpi
