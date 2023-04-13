@@ -63,7 +63,7 @@ if rank == 0:
 
 #### Code Example: Global Dot
 
- It first initializes MPI and divides an array of integers from 1 to n into size chunks using numpy. The scatter function is then called to send the appropriate chunk of data to each process. Each process receives its own chunk of data and computes the sum of its local chunk using the numpy sum function. Finally, the local sums are combined into a global sum using the reduce function with the MPI.SUM operator, and the root process prints the result.
+ It first initializes the MPI communicator, gets the rank and size. The total length of the arrays is defined as n which is twice the size of the communicator. Then on process rank 0, two arrays x and y are created using NumPy's arange() function. These arrays are then manually divided into sub-arrays and distributed among all processes using the scatter() function. Each process computes the dot product of its local sub-arrays and then sends the result to process rank 0 using the reduce() function to obtain the final dot product. The result is then printed on process rank 0.
 
 ##### In Python
 
