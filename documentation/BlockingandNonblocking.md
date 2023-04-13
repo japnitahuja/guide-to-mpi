@@ -138,7 +138,7 @@ if rank == 1:
 
 ##### In C
 
-(https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/nonblock.png)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/nonblock.png)
 
 ##### Output
 
