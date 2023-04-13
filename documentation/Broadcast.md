@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
 ![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/output6.jpg)
 
 
-[Next Section]()
+[Next Section](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/ScatterandGather.md)
 
 ### References
 
