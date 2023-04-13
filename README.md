@@ -62,7 +62,7 @@ mpicc file_name.c -o file_name
 After compiling a file you need to run it to see the output. Compiling a program means the program is converted into machine language. To see the output you have to run the following command:
 
 ```
-mpiexec -n numprocesses ./file_name
+mpirun -n numprocesses ./file_name
 ```
 
 In some programs you might have to use mpirun instead of mpiexec.
@@ -74,7 +74,7 @@ mpicc hello_world.c -o hello_world
 ```
 
 ```
-mpiexec -n 2 ./hello_world
+mpirun -n 2 ./hello_world
 ```
 
 ## Conclusion
