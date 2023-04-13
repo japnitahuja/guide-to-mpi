@@ -4,7 +4,7 @@
 
 Scatter sends data from one processes to all processes much like broadcast however, it divides the data into smaller pieces and equally distributes it.
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/scatter.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/6.png)
 
 #### Code Example: Scattering
 
@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
 
 Gather does the opposite of scatter. It gets data from each process, combines it into an array and sends it to the root process.
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/gather.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/7.png)
 
 #### Code Example: Scattering and Gathering
 
@@ -152,7 +152,7 @@ if rank == 0:
 
 `Scatter` allows the root process to distribute the data among all the processes in the communicator. The data is divided into equal-sized chunks and each process receives one of these chunks. `Gather` is the reverse operation of scatter. It allows all processes to send their local data to the root process, which collects all the data and stores it in a single array.
 
-![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/scatterandgather.jpg)
+![alt text](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/images/10.png)
 
 
 [Next Section](https://github.com/japnitahuja/guide-to-mpi/blob/main/documentation/ScatterandReduce.md)
