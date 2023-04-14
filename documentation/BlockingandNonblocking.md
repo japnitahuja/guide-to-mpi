@@ -163,36 +163,79 @@ if rank == 1:
 ````
 
 ##### In C
+The functions used for Non-Blocking communication MPI_Isend(), MPI_Irecv(), and MPI_Wait():
+
+`MPI_Isend()`: non-blocking send operation
+
+##### int MPI_Isend(void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+- buf: address of send buffer
+- count: number of elements to send
+- datatype: datatype of each element
+- dest: rank of destination process
+- tag: message tag
+- comm: communicator
+- request: pointer to communication request object
+
+`MPI_Irecv()`: non-blocking receive operation
+
+##### int MPI_Irecv(void *buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Request *request)
+- buf: address of receive buffer
+- count: maximum number of elements to receive
+- datatype: datatype of each element
+- source: rank of source process
+- tag: message tag
+- comm: communicator
+- request: pointer to communication request object
+
+`MPI_Wait()`: wait for a communication to complete
+
+##### int MPI_Wait(MPI_Request *request, MPI_Status *status)
+- request: pointer to communication request object
+- status: pointer to status object (may be MPI_STATUS_IGNORE if status information is not needed)
 
 ```
 #include <stdio.h>
 #include <mpi.h>
+#include <stdlib.h>
 
 int main(int argc, char** argv) {
     int rank, size;
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
+
     double randNum = 0.0;
+    MPI_Request req;
     MPI_Status status;
 
+    // send a message from rank 0 to rank 1 using non-blocking communication
     if (rank == 0) {
-        printf("Process %d before receiving has the number %f\n", rank, randNum);
-        MPI_Irecv(&randNum, 1, MPI_DOUBLE, 1, 0, MPI_COMM_WORLD, &request);
-        MPI_Wait(&request, &status);
-        printf("Process %d received the number %f\n", rank, randNum);
+        randNum = (double) rand() / RAND_MAX;
+        MPI_Isend(&randNum, 1, MPI_DOUBLE, 1, 0, MPI_COMM_WORLD, &req);
+        printf("Rank %d sent data: %f\n", rank, randNum);
+    } else if (rank == 1) {
+        MPI_Irecv(&randNum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, &req);
     }
 
+    // do some other computation while waiting for communication to complete
+    printf("Rank %d is doing some other computation...\n", rank);
+    double result = 0.0;
+    for (int i = 0; i < 10000000; i++) {
+        result += i;
+    }
+
+    // wait for the communication to complete
+    MPI_Wait(&req, &status);
+
+    // print the received message
     if (rank == 1) {
-        printf("Process %d before receiving has the number %f\n", rank, randNum);
-        MPI_Irecv(&randNum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, &request);
-        MPI_Wait(&request, &status);
-        printf("Process %d received the number %f\n", rank, randNum);
+        printf("Rank %d received data: %f\n", rank, randNum);
     }
 
     MPI_Finalize();
     return 0;
 }
+
 
 ```
 
