@@ -34,6 +34,35 @@ print("Process", rank, "has received ", data)
 
 ##### In C
 
+```#include <stdio.h>
+#include <mpi.h>
+
+int main(int argc, char **argv) {
+    int rank, size;
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    int *data = NULL;
+    if (rank == 0) {
+        data = (int *)malloc(size * sizeof(int));
+        for (int i = 0; i < size; i++) {
+            data[i] = i + 1;
+        }
+    }
+
+    int local_data;
+    MPI_Scatter(data, 1, MPI_INT, &local_data, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    printf("Process %d has received %d\n", rank, local_data);
+
+    if (data != NULL) {
+        free(data);
+    }
+
+    MPI_Finalize();
+    return 0;
+}
+```
 
 
 ##### Output
