@@ -33,7 +33,20 @@ print("Process", rank, "has received ", data)
 ```
 
 ##### In C
+ 
+####int MPI_Scatter(const void *sendbuf, int sendcount, MPI_Datatype sendtype, 
+       void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, 
+                MPI_Comm comm)
+######Here's a brief explanation of each argument:
 
+-sendbuf: A pointer to the send buffer, which contains the data to be scattered. This argument is significant only at the root process (i.e., the process with rank root).
+-sendcount: The number of elements to be sent to each process. This argument is significant only at the root process.
+-sendtype: The MPI data type of the elements in the send buffer.
+-recvbuf: A pointer to the receive buffer, where the data is stored on the non-root processes after scattering. This buffer should be large enough to hold the data received by each process.
+-recvcount: The number of elements in the receive buffer for each process.
+-recvtype: The MPI data type of the elements in the receive buffer.
+-root: The rank of the root process, i.e., the process from which the data is being scattered.
+-comm: The communicator over which the scattering operation is performed.
 ```#include <stdio.h>
 #include <mpi.h>
 
@@ -110,7 +123,17 @@ if rank == 0:
     print("The gathered result is", data)
 
 ```
-
+#####int MPI_Gather(const void *sendbuf, int sendcount, MPI_Datatype sendtype,
+               void *recvbuf, int recvcount, MPI_Datatype recvtype,
+               int root, MPI_Comm comm)
+-sendbuf: A pointer to the send buffer, which contains the data to be gathered. This argument is significant only at the non-root processes (i.e., processes other than the root process).
+-sendcount: The number of elements to be sent from each process. This argument is significant only at the non-root processes.
+-sendtype: The MPI data type of the elements in the send buffer.
+-recvbuf: A pointer to the receive buffer, where the gathered data is stored on the root process. This buffer should be large enough to hold the data received from all processes.
+-recvcount: The number of elements in the receive buffer for the root process.
+-recvtype: The MPI data type of the elements in the receive buffer.
+-root: The rank of the root process, i.e., the process to which the data is being gathered.
+-comm: The communicator over which the gather operation is performed.
 ##### In C
 ```#include <stdio.h>
 #include <stdlib.h>
