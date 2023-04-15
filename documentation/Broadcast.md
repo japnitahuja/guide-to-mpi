@@ -35,6 +35,14 @@ print("Process", rank, "has data", data)
 
 ##### In C
 
+###### int MPI_Bcast(void *buffer, int count, MPI_Datatype datatype, int root, MPI_Comm comm)
+
+- buffer: pointer to the buffer holding the data to be broadcasted (send buffer for the root process, receive buffer for all other processes)
+- count: number of data elements to be broadcasted
+- datatype: data type of the broadcasted data
+- root: rank of the root process (the process that sends the data)
+- comm: communicator that defines the scope of the broadcast operation
+
 ```
 #include <stdio.h>
 #include <mpi.h>
