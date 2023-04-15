@@ -1,5 +1,10 @@
 ## Blocking and Nonblocking
 
+### Blocking communication
+
+In MPI, blocking communication refers to communication operations that block the progress of a process until the communication is complete. `Recv` is used for blocking communication
+
+
 ### Deadlocks
 
 A deadlock may occur when a program is indefinately waiting for a message that was never sent. 
@@ -25,6 +30,15 @@ if rank == 1:
 ```
 
 ##### In C
+###### int MPI_Recv(void *buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Status *status)`
+
+- buf: address of receive buffer
+- count: maximum number of elements to receive
+- datatype: datatype of each element
+- source: rank of source process or MPI_ANY_SOURCE to receive a message from any source
+- tag: message tag or MPI_ANY_TAG to receive a message with any tag
+- comm: communicator
+- status: pointer to status object that contains information about the received message, such as the source rank and message tag (can be set to MPI_STATUS_IGNORE if status information is not needed)
 
 ```
 #include <stdio.h>
