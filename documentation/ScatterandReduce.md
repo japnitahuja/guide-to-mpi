@@ -56,6 +56,14 @@ if rank == 0:
 ```
 
 ##### In C
+###### int MPI_Reduce(const void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, int root, MPI_Comm comm)
+- sendbuf: pointer to the send buffer, which contains the data to be reduced on each process. On the root process, this argument is ignored.
+- recvbuf: pointer to the receive buffer, which will hold the result of the reduction operation on the root process.
+- count: number of data elements in the send buffer.
+- datatype: data type of the data elements in the send buffer.
+- op: reduction operation to be performed. This is a predefined reduction operation such as MPI_SUM, MPI_MAX, etc.
+- root: rank of the root process, which will receive the result of the reduction operation.
+- comm: communicator that defines the group of processes involved in the reduction operation.
 ```
 #include <stdio.h>
 #include <stdlib.h>
