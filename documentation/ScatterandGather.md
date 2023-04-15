@@ -34,8 +34,7 @@ print("Process", rank, "has received ", data)
 
 ##### In C
  
-#### int MPI_Scatter(const void *sendbuf, int sendcount, MPI_Datatype sendtype, void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
-###### Here's a brief explanation of each argument:
+##### int MPI_Scatter(const void *sendbuf, int sendcount, MPI_Datatype sendtype, void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
 
 - sendbuf: A pointer to the send buffer, which contains the data to be scattered. This argument is significant only at the root process (i.e., the process with rank root).
 - sendcount: The number of elements to be sent to each process. This argument is significant only at the root process.
