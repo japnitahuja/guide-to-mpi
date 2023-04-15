@@ -120,7 +120,11 @@ if rank == 0:
     print("The gathered result is", data)
 
 ```
-##### int MPI_Gather(const void *sendbuf, int sendcount, MPI_Datatype sendtype,void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
+
+
+##### In C
+
+###### int MPI_Gather(const void *sendbuf, int sendcount, MPI_Datatype sendtype,void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
 - sendbuf: A pointer to the send buffer, which contains the data to be gathered. This argument is significant only at the non-root processes (i.e., processes other than the root process).
 - sendcount: The number of elements to be sent from each process. This argument is significant only at the non-root processes.
 - sendtype: The MPI data type of the elements in the send buffer.
@@ -129,8 +133,6 @@ if rank == 0:
 - recvtype: The MPI data type of the elements in the receive buffer.
 - root: The rank of the root process, i.e., the process to which the data is being gathered.
 - comm: The communicator over which the gather operation is performed.
-
-##### In C
 ```#include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
