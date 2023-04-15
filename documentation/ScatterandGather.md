@@ -32,7 +32,7 @@ data = comm.scatter(data, root=0)
 print("Process", rank, "has received ", data)
 ```
 
-##### In C
+#### In C
  
 ##### int MPI_Scatter(const void *sendbuf, int sendcount, MPI_Datatype sendtype, void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
 
